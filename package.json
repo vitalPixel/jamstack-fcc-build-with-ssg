@@ -1,0 +1,16 @@
+{
+  "name": "sonytextile",
+  "version": "1.0.0",
+  "description": "Oficial website of sonyTextile",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "vital Pixel <dev@vitalpixel.org>",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}
