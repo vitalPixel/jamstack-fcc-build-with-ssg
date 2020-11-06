@@ -5,7 +5,12 @@ layout: base.njk
 
 <div class="intro__text">
     <h1>About Us.</h1>
-    <p>
-        This is a description about our company.
-    </p>
+
+    <ul>
+    {% for article in news.articles %}
+        <li><h2><a href="{{ article.url }}">{{ article.title }}</a></h2></li>
+        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+    {% endfor %}
+    </ul>
 </div>
