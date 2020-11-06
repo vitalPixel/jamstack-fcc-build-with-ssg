@@ -1,7 +1,7 @@
 {
-  "name": "sonytextile",
+  "name": "jamstack fcc tutorial",
   "version": "1.0.0",
-  "description": "Oficial website of sonyTextile",
+  "description": "Website for following a fcc tutorial about setting up a ssg on a jamstack",
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
