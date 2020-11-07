@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="./fix.css">
-        <link rel="stylesheet" type="text/css" href="./styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lora&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ title }}</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <main class="background">
             <section class="intro">
                 <div class="intro__wrapper">
-                    <div class="intro__logo">
-                        <img src="./sonyTextile__logo--color.png" alt="Three balls of wool yarn over a light wood background.">
-                    </div>
+                    <p>This is your page</p>
                     {{ content | safe }}
                     <div class="intro__contacts">
                         <h2 class="intro__contacts__title">Contact us for enquiries:</h2>
