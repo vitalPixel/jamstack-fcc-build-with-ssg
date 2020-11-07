@@ -1,12 +1,26 @@
 const axios = require('axios');
+const countries = require("./countries.json")
 require('dotenv').config();
 
-module.exports = async function() {
-    try {
-      const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apiKey=${process.env.NEWS_API_KEY}`);
-      return response.data;
-    } catch (error) {
-      console.error(error);
+async function getNews(country) {
+  try {
+    const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&pageSize=5&apiKey=${process.env.NEWS_API_KEY}`);
+    return {
+      "country": country,
+      "articles": response.data.articles
     }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+module.exports = async function() {
+  
+  var newsPromises = countries.map(getNews);
+  return Promise.all(newsPromises).then( newsObjects => {
+    console.log('newsObjects:', newsObjects);
+    return [].concat.apply([],newsObjects);
+  });
 
 };
